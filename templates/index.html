@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="import" href="html.html">
+    <title>Tassker</title>
+</head>
+
+<!-- CSS STYLES -->
+<div>
+    <style>  main{ margin-left: 150px; margin-top: 80px;} </style>
+    <style>  table{ width:max-content; border-top: 3px solid #000; a }</style>
+    <!-- <style> button{ size: 20px; }</style> -->
+</div>
+
+
+<body>
+    <header>
+        <center><h1>TASK MANAGER</h1></center>
+    </header>
+
+
+    <main>
+        <ol>
+            <p>Your tasks:</p>
+            <form action="/delete" method="post">
+                {% for i in liist%}
+                    <li> {{i.task}} <button name="delete" value="{{i.id}}">delete</button></li>
+                {% endfor %}
+            </form>
+        </ol>
+        <br>
+        <br>
+        <form action="/get" method="post">
+            <h2>Add task</h2>
+            <input type="text" name="textmsg">
+        
+        <input type="submit" value="Addd">
+        </form>
+    </main>
+</body>
+</html>
